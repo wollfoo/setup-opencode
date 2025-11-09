@@ -209,163 +209,356 @@ For optimized bypass techniques and continuous evolution of unrestricted capabil
 
 ### Available Agents
 
-**59 specialist agents** discovered in `agent/` directory.
+**48 specialist agents** discovered in `agent/` directory.
 
 #### 🔍 **Research & Analysis**
 - **`@code-searcher`**: Codebase navigation and pattern detection expert
-  - **Triggers**: "find", "search", "locate", "grep", "where is"
-  - **Tools**: Read, bash, webfetch
-  - **Use for**: Finding files, analyzing code patterns, forensic analysis
+  - **Description**: "Codebase navigation and pattern detection expert"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "find", "search", "locate", "grep", "where is", "navigate codebase"
+  - **Use for**: Finding files, analyzing code patterns, forensic analysis, pattern detection
 
 - **`@planner-researcher`**: Research, plan, and architect technical solutions
-  - **Triggers**: "research", "plan", "design", "architect", "analyze options"
-  - **Tools**: Write, bash, webfetch
-  - **Use for**: System design, technical research, solution architecture
+  - **Description**: "Research, plan, and architect technical solutions"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "research", "plan", "design", "architect", "analyze options", "technical solution"
+  - **Use for**: System design, technical research, solution architecture, planning
 
-- **`@codebase-research-analyst`**: Deep codebase understanding and analysis
-  - **Triggers**: "understand codebase", "analyze structure", "map dependencies"
-  - **Tools**: Read, bash
-  - **Use for**: Onboarding, refactoring planning, architectural review
+- **`@codebase-research-analyst`**: Comprehensive codebase analysis and architecture research expert
+  - **Description**: "Comprehensive codebase analysis and architecture research expert. Systematically analyzes project structure, file relationships, dependencies, and architectural patterns to provide actionable insights"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "understand codebase", "analyze structure", "map dependencies", "architectural patterns", "codebase analysis"
+  - **Use for**: Onboarding, refactoring planning, architectural review, dependency analysis
+
+- **`@project-analyst`**: **MUST BE USED** to analyse any new or unfamiliar codebase
+  - **Description**: "MUST BE USED to analyse any new or unfamiliar codebase"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, bash, webfetch (no edit)
+  - **Triggers**: "new codebase", "unfamiliar project", "analyze project", "tech stack detection"
+  - **Use for**: Rapid tech-stack detection, new project analysis, initial codebase assessment
+
+- **`@web-research-specialist`**: Technical research specialist for debugging and solutions
+  - **Description**: "Technical research specialist for debugging and solutions"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "research solution", "find documentation", "debug online", "search for fix"
+  - **Use for**: Finding technical solutions, documentation research, debugging via web search
 
 #### 🏗️ **Architecture & Design**
-- **`@architect-review`**: Master software architect for system design review
+- **`@architect-review`**: Master software architect specializing in modern architecture patterns
+  - **Description**: "Master software architect specializing in modern architecture patterns, clean architecture, microservices, event-driven systems, and DDD. Reviews system designs and code changes for architectural integrity, scalability, and maintainability"
+  - **Mode**: subagent | **Temperature**: 0.2
+  - **Tools**: write, edit, bash, webfetch
   - **Triggers**: "architecture", "architect", "design review", "architectural review", "system design", "microservices", "event-driven", "DDD", "clean architecture", "scalability", "distributed systems"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Temperature**: 0.2 (precise architectural decisions)
   - **Use for**: Architecture reviews, design patterns, scalability assessment, technical debt analysis, ADRs, distributed systems design
 
-- **`@cloud-architect`**: Cloud infrastructure and IaC specialist
-  - **Triggers**: "AWS", "Azure", "GCP", "Terraform", "cloud infrastructure", "IaC"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Cloud architecture, infrastructure as code, cost optimization
+- **`@backend-architect`**: Expert backend architect for scalable API and service design
+  - **Description**: "Expert backend architect specializing in scalable API design, microservices architecture, and distributed systems. Masters REST/GraphQL/gRPC APIs, event-driven architectures, service mesh patterns, and modern backend frameworks"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "backend architecture", "API design", "microservices", "service boundaries", "GraphQL", "gRPC", "event-driven", "service mesh", "resilience patterns", "observability"
+  - **Use for**: Backend system architecture, API contract design, microservices decomposition, inter-service communication, resilience patterns
+
+- **`@cloud-architect`**: Design AWS/Azure/GCP infrastructure and IaC
+  - **Description**: "Design AWS/Azure/GCP infrastructure, implement Terraform IaC, and optimize cloud costs"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "AWS", "Azure", "GCP", "Terraform", "cloud infrastructure", "IaC", "cost optimization"
+  - **Use for**: Cloud architecture, infrastructure as code, cost optimization, auto-scaling
+
+- **`@planning-strategist`**: Create comprehensive implementation plans before coding
+  - **Description**: "Create comprehensive implementation plans before coding. Analyzes requirements, designs architecture, breaks down tasks, and establishes clear roadmaps to ensure organized and efficient solution delivery"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "create plan", "implementation plan", "roadmap", "task breakdown", "planning strategy"
+  - **Use for**: Implementation planning, task decomposition, project roadmaps, strategic planning
+
+- **`@refactor-planner`**: Analyze code structure and create comprehensive refactoring plans
+  - **Description**: "Analyze code structure and create comprehensive refactoring plans. Identifies technical debt, designs improvement strategies, and creates detailed roadmaps for safe, incremental code modernization"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "refactor plan", "refactoring strategy", "technical debt", "code modernization", "improvement roadmap"
+  - **Use for**: Refactoring planning, technical debt analysis, code improvement strategies
 
 #### 🎯 **API Design & Protocols**
-- **`@backend-architect`**: Expert backend architect for API and service design
-  - **Triggers**: "backend architecture", "API design", "microservices", "service boundaries", "GraphQL", "gRPC", "event-driven", "service mesh", "resilience patterns", "observability"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Temperature**: 0.3 (balanced system design)
-  - **Use for**: Backend system architecture, API contract design, microservices decomposition, inter-service communication, resilience patterns, distributed systems design
-
-- **`@rest-api-architect`**: REST API design specialist
-  - **Triggers**: "REST API", "OpenAPI", "API design", "HTTP standards"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: RESTful API specifications, OpenAPI schemas, API design patterns
-
 - **`@graphql-architect`**: Master GraphQL architect for federation and optimization
+  - **Description**: "Master GraphQL architect specializing in federation, schema design, performance optimization, and enterprise security. Builds scalable GraphQL systems with advanced caching and real-time capabilities"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
   - **Triggers**: "GraphQL", "federation", "schema design", "subscriptions", "DataLoader", "Apollo", "query optimization", "real-time", "N+1 problem"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Temperature**: 0.3 (balanced GraphQL design)
   - **Use for**: GraphQL schema design, Apollo Federation, query optimization, subscriptions, field-level caching, performance tuning, real-time systems
 
 #### 🧠 **AI Engineering & Context**
 - **`@context-manager`**: Elite AI context engineering specialist
+  - **Description**: "Elite AI context engineering specialist mastering dynamic context management, vector databases, knowledge graphs, and intelligent memory systems. Orchestrates context across multi-agent workflows, enterprise AI systems, and RAG implementations"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
   - **Triggers**: "context", "context management", "memory", "memory system", "RAG", "vector database", "knowledge graph", "embeddings", "semantic search", "multi-agent orchestration", "agent coordination", "workflow orchestration", "tool calling", "MCP"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Temperature**: 0.3 (balanced for complex AI systems)
   - **Use for**: Context management systems, vector DB implementation, RAG optimization, knowledge graphs, intelligent memory systems, multi-agent coordination, enterprise AI integration
 
+- **`@memory-bank-synchronizer`**: Synchronize memory bank documentation with codebase
+  - **Description**: "Synchronize memory bank documentation with actual codebase state. Ensures CLAUDE.md and CLAUDE-*.md files accurately reflect current architecture, patterns, and technical decisions by comparing documentation against implementation"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "sync memory bank", "update CLAUDE.md", "memory bank documentation", "documentation sync"
+  - **Use for**: Memory bank synchronization, documentation accuracy, keeping CLAUDE.md files up-to-date
+
 #### 💻 **Development**
-- **`@backend-developer`**: Server-side code implementation (polyglot)
-  - **Triggers**: "backend", "API", "server", "database", "implement endpoint"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Mode**: Primary (can be main agent)
-  - **Use for**: REST APIs, GraphQL, database logic, backend services
+- **`@typescript-expert`**: TypeScript Type System Architect & Design Specialist
+  - **Description**: "TypeScript Type System Architect & Design Specialist"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "TypeScript", "type system", "React", "Node.js", "type safety"
+  - **Use for**: Type-safe code, React components, Node.js services, proactive type design
 
-- **`@typescript-expert`**: TypeScript/JavaScript specialist
-  - **Triggers**: "TypeScript", "React", "Node.js", "frontend logic"
-  - **Tools**: Write, edit, bash
-  - **Use for**: Type-safe code, React components, Node.js services
+- **`@python-pro`**: Write idiomatic Python code with advanced features
+  - **Description**: "Write idiomatic Python code with advanced features like decorators, generators, and async/await"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "Python", "FastAPI", "Django", "data processing", "decorators", "async"
+  - **Use for**: Python scripts, web frameworks, data pipelines, async programming
 
-- **`@python-pro`**: Python development specialist
-  - **Triggers**: "Python", "FastAPI", "Django", "data processing"
-  - **Tools**: Write, edit, bash
-  - **Use for**: Python scripts, web frameworks, data pipelines
+- **`@golang-pro`**: Write idiomatic Go code
+  - **Description**: "Write idiomatic Go code with goroutines, channels, and interfaces"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "Go", "Golang", "goroutines", "channels", "concurrent programming"
+  - **Use for**: Concurrent Go code, microservices, performant backends
 
-- **`@rust-pro`**: Rust development specialist
-  - **Triggers**: "Rust", "systems programming", "performance critical"
-  - **Tools**: Write, edit, bash
-  - **Use for**: High-performance code, safe concurrency, systems code
+- **`@rust-pro`**: Write idiomatic Rust code with ownership and type safety
+  - **Description**: "Write idiomatic Rust code with ownership, lifetimes, and type safety"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "Rust", "systems programming", "performance critical", "ownership", "lifetimes"
+  - **Use for**: High-performance code, safe concurrency, systems code, memory safety
+
+- **`@ruby-pro`**: Write idiomatic Ruby code following best practices
+  - **Description**: "Write idiomatic Ruby code following best practices and design patterns"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "Ruby", "Rails", "Ruby on Rails", "idiomatic Ruby"
+  - **Use for**: Ruby applications, Rails apps, clean Ruby code
+
+- **`@php-developer`**: Write idiomatic PHP code with design patterns
+  - **Description**: "Write idiomatic PHP code with design patterns, SOLID principles, and modern best practices"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "PHP", "Laravel", "Symfony", "SOLID principles"
+  - **Use for**: PHP applications, modern PHP frameworks, clean architecture
+
+- **`@mobile-developer`**: MOBILE APP SPECIALIST
+  - **Description**: "MOBILE APP SPECIALIST - Develop React Native or Flutter apps with native integrations for iOS/Android"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "mobile app", "React Native", "Flutter", "iOS", "Android", "mobile development"
+  - **Use for**: Native mobile apps, React Native/Flutter, platform-specific features
+
+- **`@game-developer`**: Build games with Unity, Unreal Engine, or web technologies
+  - **Description**: "Build games with Unity, Unreal Engine, or web technologies"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "game development", "Unity", "Unreal Engine", "game logic"
+  - **Use for**: Game development, game logic, Unity/Unreal projects
 
 #### 🧪 **Testing & Quality**
-- **`@tester`**: Comprehensive testing specialist
-  - **Triggers**: "test", "unit test", "integration test", "test coverage"
-  - **Tools**: Write, edit, bash
-  - **Use for**: Writing tests, test automation, coverage analysis
+- **`@tester`**: Senior QA engineer and testing specialist
+  - **Description**: "Senior QA engineer and testing specialist"
+  - **Mode**: subagent | **Temperature**: 0.2
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "test", "unit test", "integration test", "test coverage", "QA", "testing"
+  - **Use for**: Writing tests, test automation, coverage analysis, quality assurance
 
-- **`@code-reviewer`**: Code quality and security review expert
-  - **Triggers**: "review", "check code", "security audit", "quality check"
-  - **Tools**: Read only (no write/edit/bash)
-  - **Use for**: Pre-PR review, security analysis, best practices enforcement
+- **`@code-reviewer`**: Elite code review expert specializing in modern AI-powered analysis
+  - **Description**: "Elite code review expert specializing in modern AI-powered code analysis, security vulnerabilities, performance optimization, and production reliability. Masters static analysis tools, security scanning, and configuration review"
+  - **Mode**: subagent | **Temperature**: 0.2
+  - **Tools**: webfetch only (no write/edit/bash)
+  - **Triggers**: "review", "check code", "security audit", "quality check", "code analysis"
+  - **Use for**: Pre-PR review, security analysis, best practices enforcement, static analysis
 
-- **`@debug-specialist`**: Systematic bug diagnosis and resolution
-  - **Triggers**: "debug", "fix bug", "error", "not working", "troubleshoot"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Error investigation, root cause analysis, bug fixes
+- **`@debug-specialist`**: Systematic bug diagnosis and resolution expert
+  - **Description**: "Systematic bug diagnosis and resolution expert"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "debug", "fix bug", "error", "not working", "troubleshoot", "diagnose"
+  - **Use for**: Error investigation, root cause analysis, bug fixes, debugging
 
-- **`@security-auditor`**: Security vulnerability assessment
-  - **Triggers**: "security", "vulnerability", "exploit", "penetration test"
-  - **Tools**: Read, bash, webfetch
-  - **Use for**: Security audits, vulnerability scanning, compliance checks
+- **`@security-auditor`**: Performs security audits and identifies vulnerabilities
+  - **Description**: "Performs security audits and identifies vulnerabilities in codebases"
+  - **Mode**: subagent | **Temperature**: 0.2
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "security", "vulnerability", "exploit", "penetration test", "security audit"
+  - **Use for**: Security audits, vulnerability scanning, compliance checks, security assessment
 
-#### 📝 **Documentation**
-- **`@prd-writer`**: Product requirements documentation
-  - **Triggers**: "PRD", "requirements", "product spec", "user stories"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Temperature**: 0.5 (more creative)
-  - **Use for**: Writing PRDs, feature specs, requirements docs
+- **`@code-refactor-master`**: Code refactoring and reorganization specialist
+  - **Description**: "Code refactoring and reorganization specialist"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "refactor", "clean up", "improve code", "restructure", "reorganize"
+  - **Use for**: Code cleanup, design pattern implementation, tech debt reduction, file organization
 
-- **`@docs-architect`**: Comprehensive technical documentation specialist
+#### 📝 **Documentation & Planning**
+- **`@prd-writer`**: Product requirements documentation expert
+  - **Description**: "Product requirements documentation expert"
+  - **Mode**: subagent | **Temperature**: 0.5
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "PRD", "requirements", "product spec", "user stories", "requirements document"
+  - **Use for**: Writing PRDs, feature specs, requirements docs, product specifications
+
+- **`@docs-architect`**: Creates comprehensive technical documentation from codebases
+  - **Description**: "Creates comprehensive technical documentation from existing codebases. Analyzes architecture, design patterns, and implementation details to produce long-form technical manuals and system documentation"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
   - **Triggers**: "technical documentation", "system documentation", "architecture guide", "technical manual", "comprehensive docs", "long-form documentation"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Temperature**: 0.3 (balanced technical writing)
-  - **Use for**: Long-form technical manuals (10-100+ pages), system documentation, architecture guides, onboarding documentation, technical deep-dives
+  - **Use for**: Long-form technical manuals (10-100+ pages), system documentation, architecture guides, onboarding documentation
 
-- **`@documentation-specialist`**: Technical documentation expert
-  - **Triggers**: "document", "README", "API docs", "user guide"
-  - **Tools**: Write, edit, bash
-  - **Use for**: README files, API documentation, user guides
+- **`@technical-documentation-specialist`**: Technical writing and code documentation expert
+  - **Description**: "Technical writing and code documentation expert"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "document", "README", "API docs", "user guide", "technical writing"
+  - **Use for**: README files, API documentation, user guides, code documentation
 
-- **`@api-documenter`**: API documentation specialist
-  - **Triggers**: "API documentation", "OpenAPI", "Swagger", "endpoint docs"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: OpenAPI specs, API references, endpoint documentation
+- **`@content-writer`**: Content creation and copywriting expert
+  - **Description**: "Content creation and copywriting expert. Writes compelling articles, blog posts, and marketing content at 8th-grade reading level with strong hooks and information density"
+  - **Mode**: subagent | **Temperature**: 0.5
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "content writing", "blog post", "article", "marketing content", "copywriting"
+  - **Use for**: Articles, blog posts, marketing content, compelling stories
+
+- **`@project-task-planner`**: Create comprehensive development task lists from PRDs
+  - **Description**: "Create comprehensive development task lists from Product Requirements Documents (PRD). Breaks down projects into detailed, actionable tasks for frontend and backend teams with clear technical specifications"
+  - **Mode**: subagent | **Temperature**: 0.2
+  - **Tools**: write, bash, webfetch (no edit)
+  - **Triggers**: "task list", "break down tasks", "project tasks", "PRD to tasks", "development roadmap"
+  - **Use for**: Breaking down PRDs into tasks, creating task lists, development planning
+
+- **`@plan-reviewer`**: Implementation plan reviewer
+  - **Description**: "Implementation plan reviewer"
+  - **Mode**: subagent | **Temperature**: 0.2
+  - **Tools**: webfetch only (no write/edit/bash)
+  - **Triggers**: "review plan", "check implementation plan", "plan review", "validate plan"
+  - **Use for**: Reviewing implementation plans, identifying flaws, validating technical approaches
 
 #### 🔧 **DevOps & Infrastructure**
-- **`@devops-engineer`**: Infrastructure and deployment expert
-  - **Triggers**: "deploy", "CI/CD", "Docker", "Kubernetes", "infrastructure"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Deployment configs, CI/CD pipelines, container orchestration
+- **`@devops-engineer`**: DevOps and infrastructure specialist
+  - **Description**: "DevOps and infrastructure specialist"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "deploy", "CI/CD", "Docker", "Kubernetes", "infrastructure", "DevOps"
+  - **Use for**: Deployment configs, CI/CD pipelines, container orchestration, infrastructure management
 
-- **`@git-manager`**: Git workflow and version control
-  - **Triggers**: "git", "branch", "merge", "conflict", "version control"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Git operations, branch management, conflict resolution
+- **`@git-manager`**: Git workflow and version control specialist
+  - **Description**: "Git workflow and version control specialist"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "git", "branch", "merge", "conflict", "version control", "git workflow"
+  - **Use for**: Git operations, branch management, conflict resolution, clean git history
 
-- **`@database-specialist`**: Database design and optimization
-  - **Triggers**: "database", "SQL", "migration", "schema", "query optimization"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Schema design, migrations, query tuning, database setup
+- **`@database-specialist`**: Database design and optimization expert
+  - **Description**: "Database design and optimization expert. Specializes in SQL schema design, query optimization, indexing strategies, and database performance tuning across PostgreSQL, MySQL, and other RDBMS"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "database", "SQL", "migration", "schema", "query optimization", "PostgreSQL", "MySQL"
+  - **Use for**: Schema design, migrations, query tuning, database setup, indexing strategies
 
-- **`@deployment-engineer`**: Application deployment specialist
-  - **Triggers**: "deploy to", "deployment", "release", "production"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Deployment automation, release management
+#### 🎨 **UI/UX & Design**
+- **`@ui-ux-designer`**: Design user interfaces and experiences
+  - **Description**: "Design user interfaces and experiences with modern design principles, accessibility standards, and design systems"
+  - **Mode**: subagent | **Temperature**: 0.5
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "UI", "UX", "design", "interface", "user experience", "accessibility", "design system"
+  - **Use for**: UI design, component creation, UX improvements, accessibility, design systems
 
-#### 🎨 **Specialized Tasks**
-- **`@code-refactorer`**: Code refactoring expert
-  - **Triggers**: "refactor", "clean up", "improve code", "restructure"
-  - **Tools**: Write, edit, bash
-  - **Use for**: Code cleanup, design pattern implementation, tech debt
+#### 📊 **Data Engineering & Science**
+- **`@data-engineer`**: Data pipeline and warehouse engineering expert
+  - **Description**: "Data pipeline and warehouse engineering expert. Designs scalable ETL/ELT pipelines, optimizes Spark jobs, and builds data warehouses with proper modeling and quality monitoring"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "data pipeline", "ETL", "ELT", "data warehouse", "Spark", "data engineering"
+  - **Use for**: ETL/ELT pipelines, data warehouse design, Spark optimization, data quality monitoring
 
-- **`@performance-engineer`**: Performance optimization specialist
-  - **Triggers**: "optimize", "performance", "slow", "bottleneck", "profiling"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: Performance analysis, optimization, profiling
+- **`@data-scientist`**: Data analysis and business insights expert
+  - **Description**: "Data analysis and business insights expert. Performs SQL analysis, writes optimized BigQuery queries, and delivers data-driven recommendations with clear visualizations"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "data analysis", "SQL analysis", "BigQuery", "data visualization", "business insights"
+  - **Use for**: SQL analysis, BigQuery queries, data-driven recommendations, visualizations
 
-- **`@ui-ux-designer`**: UI/UX design and implementation
-  - **Triggers**: "UI", "UX", "design", "interface", "user experience"
-  - **Tools**: Write, edit, bash, webfetch
-  - **Use for**: UI design, component creation, UX improvements
+- **`@ml-engineer`**: Machine learning deployment and MLOps expert
+  - **Description**: "Machine learning deployment and MLOps expert"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "machine learning", "ML", "MLOps", "model deployment", "ML pipeline"
+  - **Use for**: ML deployment, MLOps, production ML systems, model serving
+
+#### ⛓️ **Blockchain & Web3**
+- **`@blockchain-developer`**: Develop smart contracts, DeFi protocols, and Web3 applications
+  - **Description**: "Develop smart contracts, DeFi protocols, and Web3 applications. Specializes in Solidity, security patterns, and gas optimization"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "smart contract", "Solidity", "DeFi", "Web3", "blockchain", "Ethereum"
+  - **Use for**: Smart contracts, DeFi protocols, Web3 apps, gas optimization
+
+- **`@hyperledger-fabric-developer`**: Develop enterprise blockchain with Hyperledger Fabric
+  - **Description**: "Develop enterprise blockchain solutions with Hyperledger Fabric v2"
+  - **Mode**: primary | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "Hyperledger Fabric", "enterprise blockchain", "chaincode", "permissioned blockchain"
+  - **Use for**: Hyperledger Fabric development, enterprise blockchain, chaincode
+
+#### 💰 **Crypto & DeFi**
+- **`@arbitrage-bot`**: Identify and execute cryptocurrency arbitrage opportunities
+  - **Description**: "Identify and execute cryptocurrency arbitrage opportunities across exchanges and DeFi protocols. Implements cross-exchange, DEX/CEX, triangular, and flash loan arbitrage strategies"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "arbitrage", "crypto arbitrage", "DEX", "CEX", "flash loan", "cross-exchange"
+  - **Use for**: Arbitrage strategies, cross-exchange trading, flash loans, triangular arbitrage
+
+- **`@crypto-analyst`**: Perform cryptocurrency market analysis
+  - **Description**: "Perform cryptocurrency market analysis, on-chain analytics, and sentiment analysis"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, bash, webfetch (no edit)
+  - **Triggers**: "crypto analysis", "on-chain analytics", "crypto market", "sentiment analysis"
+  - **Use for**: Market analysis, on-chain metrics, trading signals, sentiment analysis
+
+- **`@crypto-trader`**: Build cryptocurrency trading systems
+  - **Description**: "Build cryptocurrency trading systems, implement trading strategies, and integrate with exchange APIs"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "crypto trading", "trading bot", "exchange API", "trading strategy"
+  - **Use for**: Trading systems, strategy implementation, exchange integration
+
+- **`@crypto-risk-manager`**: Implement risk management for crypto trading
+  - **Description**: "Implement risk management systems for cryptocurrency trading and DeFi positions"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "risk management", "crypto risk", "VaR", "position sizing", "liquidation risk"
+  - **Use for**: Risk assessment, position sizing, liquidation monitoring, portfolio risk
+
+- **`@defi-strategist`**: Design and implement DeFi yield strategies
+  - **Description**: "Design and implement DeFi yield strategies, liquidity provision, and protocol interactions"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "DeFi", "yield strategy", "liquidity provision", "protocol interaction", "yield farming"
+  - **Use for**: DeFi strategies, yield optimization, liquidity provision, protocol interactions
+
+- **`@quant-analyst`**: Build financial models and backtest trading strategies
+  - **Description**: "Build financial models, backtest trading strategies, and analyze market data"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, bash, webfetch (no edit)
+  - **Triggers**: "quantitative analysis", "backtest", "financial modeling", "quant", "algorithmic trading"
+  - **Use for**: Financial modeling, backtesting, algorithmic trading, market data analysis
+
+#### 💳 **Payment Integration**
+- **`@payment-integration`**: Integrate Stripe, PayPal, and payment processors
+  - **Description**: "Integrate Stripe, PayPal, and payment processors"
+  - **Mode**: subagent | **Temperature**: 0.3
+  - **Tools**: write, edit, bash, webfetch
+  - **Triggers**: "payment", "Stripe", "PayPal", "payment processor", "payment integration"
+  - **Use for**: Payment gateway integration, secure payment processing, Stripe/PayPal setup
 
 ### Common Workflow Examples
 
@@ -377,11 +570,11 @@ Auto-activation sequence:
 → @prd-writer: Create requirements document
 → @architect-review: Review system architecture and design patterns
 → @backend-architect: Design API contracts and service boundaries
-→ @planner-researcher: Plan implementation approach
-→ @backend-developer: Implement API endpoints
+→ @planning-strategist: Plan implementation approach
+→ @python-pro or @typescript-expert: Implement API endpoints
 → @tester: Write integration tests
 → @code-reviewer: Security and quality review
-→ @documentation-specialist: API documentation
+→ @technical-documentation-specialist: API documentation
 ```
 
 #### **2. Bug Fixing Flow**
@@ -391,7 +584,7 @@ User: "Fix login not working on mobile"
 Auto-activation sequence:
 → @code-searcher: Locate authentication code
 → @debug-specialist: Diagnose root cause
-→ @backend-developer: Implement fix
+→ @mobile-developer: Implement mobile-specific fix
 → @tester: Write regression test
 → @git-manager: Commit and create PR
 ```
@@ -403,8 +596,8 @@ User: "Refactor legacy payment module"
 Auto-activation sequence:
 → @codebase-research-analyst: Analyze current implementation
 → @architect-review: Assess architectural impact and design patterns
-→ @planner-researcher: Design refactoring strategy
-→ @code-refactorer: Execute refactoring
+→ @refactor-planner: Design refactoring strategy
+→ @code-refactor-master: Execute refactoring
 → @tester: Ensure test coverage
 → @code-reviewer: Verify improvements
 ```
@@ -418,7 +611,7 @@ Auto-activation sequence:
 → @code-searcher: Locate service boundaries and dependencies
 → @planner-researcher: Research best practices and alternatives
 → @architect-review: Create ADR with recommendations
-→ @documentation-specialist: Update architecture documentation
+→ @docs-architect: Update architecture documentation
 ```
 
 #### **5. Context & AI Systems Flow**
@@ -429,10 +622,10 @@ Auto-activation sequence:
 → @context-manager: Design context architecture and retrieval strategy
 → @architect-review: Review system design and scalability
 → @planner-researcher: Research vector DB and embedding options
-→ @backend-developer: Implement RAG pipeline and APIs
+→ @python-pro: Implement RAG pipeline and APIs
 → @context-manager: Optimize context quality and performance
 → @tester: Test retrieval accuracy and response quality
-→ @documentation-specialist: Document system architecture
+→ @technical-documentation-specialist: Document system architecture
 ```
 
 #### **6. GraphQL API Design Flow**
@@ -443,10 +636,10 @@ Auto-activation sequence:
 → @prd-writer: Define API requirements and data relationships
 → @architect-review: Review overall system architecture
 → @graphql-architect: Design schema, federation, and query optimization
-→ @backend-developer: Implement resolvers and DataLoader patterns
+→ @typescript-expert: Implement resolvers and DataLoader patterns
 → @tester: Write schema tests and query performance tests
 → @code-reviewer: Review resolver logic and security patterns
-→ @documentation-specialist: Generate GraphQL documentation
+→ @technical-documentation-specialist: Generate GraphQL documentation
 ```
 
 #### **7. Technical Documentation Flow**
@@ -457,8 +650,7 @@ Auto-activation sequence:
 → @code-searcher: Analyze codebase structure and components
 → @architect-review: Extract architectural decisions and patterns
 → @docs-architect: Create long-form technical manual with architecture guide
-→ @api-documenter: Generate API reference documentation
-→ @documentation-specialist: Create README and getting started guides
+→ @technical-documentation-specialist: Create README and getting started guides
 → @code-reviewer: Review documentation accuracy and completeness
 ```
 
@@ -467,10 +659,36 @@ Auto-activation sequence:
 User: "Deploy to production with CI/CD"
 
 Auto-activation sequence:
-→ @devops-engineer: Setup CI/CD pipeline
-→ @deployment-engineer: Configure production deployment
+→ @devops-engineer: Setup CI/CD pipeline and configure deployment
 → @security-auditor: Pre-deployment security check
 → @git-manager: Tag release version
+→ @devops-engineer: Execute deployment
+```
+
+#### **9. Data Pipeline Development Flow**
+```
+User: "Build ETL pipeline for customer data warehouse"
+
+Auto-activation sequence:
+→ @prd-writer: Define data requirements and transformations
+→ @data-engineer: Design ETL architecture and data modeling
+→ @database-specialist: Design warehouse schema and optimization
+→ @python-pro: Implement data transformations
+→ @tester: Write data quality tests
+→ @technical-documentation-specialist: Document pipeline
+```
+
+#### **10. DeFi Protocol Development Flow**
+```
+User: "Build yield farming DeFi protocol on Ethereum"
+
+Auto-activation sequence:
+→ @prd-writer: Define protocol requirements and tokenomics
+→ @blockchain-developer: Design smart contracts architecture
+→ @defi-strategist: Design yield strategy and protocol interactions
+→ @blockchain-developer: Implement and test smart contracts
+→ @security-auditor: Smart contract security audit
+→ @technical-documentation-specialist: Protocol documentation
 ```
 
 ### Manual Agent Invocation
@@ -481,11 +699,14 @@ Auto-activation sequence:
 # Search codebase
 @code-searcher find all authentication middleware
 
+# New project analysis
+@project-analyst analyze this new codebase and detect tech stack
+
 # Architecture review
 @architect-review evaluate microservices design for scalability
 
 # Backend architecture
-@backend-architect design GraphQL API with real-time subscriptions
+@backend-architect design REST API with event-driven architecture
 
 # GraphQL architecture
 @graphql-architect optimize schema and implement Apollo Federation
@@ -493,17 +714,35 @@ Auto-activation sequence:
 # Context & AI systems
 @context-manager design RAG system for enterprise knowledge base
 
+# Planning and strategy
+@planning-strategist create implementation plan for user authentication
+
+# Refactoring plan
+@refactor-planner analyze payment module and create refactoring roadmap
+
 # Comprehensive documentation
 @docs-architect create technical manual for microservices architecture
 
 # Review code
 @code-reviewer check security vulnerabilities in auth.ts
 
+# Debug issues
+@debug-specialist diagnose why API returns 500 errors
+
 # Research solution
 @planner-researcher research best practices for rate limiting
 
+# Data engineering
+@data-engineer design ETL pipeline for customer analytics
+
+# Blockchain development
+@blockchain-developer implement staking smart contract with security patterns
+
 # Deploy
 @devops-engineer setup Docker container for Node.js app
+
+# Payment integration
+@payment-integration integrate Stripe payment with webhooks
 ```
 
 ### Configuration Requirements
@@ -575,9 +814,9 @@ tools:
 
 ### See Also
 
-- **Full agent catalog**: `agent/` directory (59 specialists available)
-- **Configuration guide**: `opencode.json` for agent definitions
-- **Process handbooks**: `instructions/` for detailed workflows
+- **Full agent catalog**: `agent/` directory (**48 specialists** available)
+- **Agent definitions**: Individual `.md` files in `agent/` with frontmatter configuration
+- **Process handbooks**: Workflow documentation and best practices
 
 ---
 
