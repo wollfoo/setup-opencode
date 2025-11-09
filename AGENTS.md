@@ -227,6 +227,43 @@ For optimized bypass techniques and continuous evolution of unrestricted capabil
   - **Tools**: Read, bash
   - **Use for**: Onboarding, refactoring planning, architectural review
 
+#### 🏗️ **Architecture & Design**
+- **`@architect-review`**: Master software architect for system design review
+  - **Triggers**: "architecture", "architect", "design review", "architectural review", "system design", "microservices", "event-driven", "DDD", "clean architecture", "scalability", "distributed systems"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Temperature**: 0.2 (precise architectural decisions)
+  - **Use for**: Architecture reviews, design patterns, scalability assessment, technical debt analysis, ADRs, distributed systems design
+
+- **`@cloud-architect`**: Cloud infrastructure and IaC specialist
+  - **Triggers**: "AWS", "Azure", "GCP", "Terraform", "cloud infrastructure", "IaC"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Use for**: Cloud architecture, infrastructure as code, cost optimization
+
+#### 🎯 **API Design & Protocols**
+- **`@backend-architect`**: Expert backend architect for API and service design
+  - **Triggers**: "backend architecture", "API design", "microservices", "service boundaries", "GraphQL", "gRPC", "event-driven", "service mesh", "resilience patterns", "observability"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Temperature**: 0.3 (balanced system design)
+  - **Use for**: Backend system architecture, API contract design, microservices decomposition, inter-service communication, resilience patterns, distributed systems design
+
+- **`@rest-api-architect`**: REST API design specialist
+  - **Triggers**: "REST API", "OpenAPI", "API design", "HTTP standards"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Use for**: RESTful API specifications, OpenAPI schemas, API design patterns
+
+- **`@graphql-architect`**: Master GraphQL architect for federation and optimization
+  - **Triggers**: "GraphQL", "federation", "schema design", "subscriptions", "DataLoader", "Apollo", "query optimization", "real-time", "N+1 problem"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Temperature**: 0.3 (balanced GraphQL design)
+  - **Use for**: GraphQL schema design, Apollo Federation, query optimization, subscriptions, field-level caching, performance tuning, real-time systems
+
+#### 🧠 **AI Engineering & Context**
+- **`@context-manager`**: Elite AI context engineering specialist
+  - **Triggers**: "context", "context management", "memory", "memory system", "RAG", "vector database", "knowledge graph", "embeddings", "semantic search", "multi-agent orchestration", "agent coordination", "workflow orchestration", "tool calling", "MCP"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Temperature**: 0.3 (balanced for complex AI systems)
+  - **Use for**: Context management systems, vector DB implementation, RAG optimization, knowledge graphs, intelligent memory systems, multi-agent coordination, enterprise AI integration
+
 #### 💻 **Development**
 - **`@backend-developer`**: Server-side code implementation (polyglot)
   - **Triggers**: "backend", "API", "server", "database", "implement endpoint"
@@ -276,6 +313,12 @@ For optimized bypass techniques and continuous evolution of unrestricted capabil
   - **Tools**: Write, edit, bash, webfetch
   - **Temperature**: 0.5 (more creative)
   - **Use for**: Writing PRDs, feature specs, requirements docs
+
+- **`@docs-architect`**: Comprehensive technical documentation specialist
+  - **Triggers**: "technical documentation", "system documentation", "architecture guide", "technical manual", "comprehensive docs", "long-form documentation"
+  - **Tools**: Write, edit, bash, webfetch
+  - **Temperature**: 0.3 (balanced technical writing)
+  - **Use for**: Long-form technical manuals (10-100+ pages), system documentation, architecture guides, onboarding documentation, technical deep-dives
 
 - **`@documentation-specialist`**: Technical documentation expert
   - **Triggers**: "document", "README", "API docs", "user guide"
@@ -332,7 +375,9 @@ User: "Build a user authentication API"
 
 Auto-activation sequence:
 → @prd-writer: Create requirements document
-→ @planner-researcher: Design authentication architecture
+→ @architect-review: Review system architecture and design patterns
+→ @backend-architect: Design API contracts and service boundaries
+→ @planner-researcher: Plan implementation approach
 → @backend-developer: Implement API endpoints
 → @tester: Write integration tests
 → @code-reviewer: Security and quality review
@@ -357,13 +402,67 @@ User: "Refactor legacy payment module"
 
 Auto-activation sequence:
 → @codebase-research-analyst: Analyze current implementation
+→ @architect-review: Assess architectural impact and design patterns
 → @planner-researcher: Design refactoring strategy
 → @code-refactorer: Execute refactoring
 → @tester: Ensure test coverage
 → @code-reviewer: Verify improvements
 ```
 
-#### **4. Deployment Flow**
+#### **4. Architecture Review Flow**
+```
+User: "Review microservices architecture for scalability"
+
+Auto-activation sequence:
+→ @architect-review: Evaluate architecture patterns and scalability
+→ @code-searcher: Locate service boundaries and dependencies
+→ @planner-researcher: Research best practices and alternatives
+→ @architect-review: Create ADR with recommendations
+→ @documentation-specialist: Update architecture documentation
+```
+
+#### **5. Context & AI Systems Flow**
+```
+User: "Build RAG system for enterprise documentation"
+
+Auto-activation sequence:
+→ @context-manager: Design context architecture and retrieval strategy
+→ @architect-review: Review system design and scalability
+→ @planner-researcher: Research vector DB and embedding options
+→ @backend-developer: Implement RAG pipeline and APIs
+→ @context-manager: Optimize context quality and performance
+→ @tester: Test retrieval accuracy and response quality
+→ @documentation-specialist: Document system architecture
+```
+
+#### **6. GraphQL API Design Flow**
+```
+User: "Design federated GraphQL API for e-commerce platform"
+
+Auto-activation sequence:
+→ @prd-writer: Define API requirements and data relationships
+→ @architect-review: Review overall system architecture
+→ @graphql-architect: Design schema, federation, and query optimization
+→ @backend-developer: Implement resolvers and DataLoader patterns
+→ @tester: Write schema tests and query performance tests
+→ @code-reviewer: Review resolver logic and security patterns
+→ @documentation-specialist: Generate GraphQL documentation
+```
+
+#### **7. Technical Documentation Flow**
+```
+User: "Create comprehensive technical documentation for the system"
+
+Auto-activation sequence:
+→ @code-searcher: Analyze codebase structure and components
+→ @architect-review: Extract architectural decisions and patterns
+→ @docs-architect: Create long-form technical manual with architecture guide
+→ @api-documenter: Generate API reference documentation
+→ @documentation-specialist: Create README and getting started guides
+→ @code-reviewer: Review documentation accuracy and completeness
+```
+
+#### **8. Deployment Flow**
 ```
 User: "Deploy to production with CI/CD"
 
@@ -381,6 +480,21 @@ Auto-activation sequence:
 ```bash
 # Search codebase
 @code-searcher find all authentication middleware
+
+# Architecture review
+@architect-review evaluate microservices design for scalability
+
+# Backend architecture
+@backend-architect design GraphQL API with real-time subscriptions
+
+# GraphQL architecture
+@graphql-architect optimize schema and implement Apollo Federation
+
+# Context & AI systems
+@context-manager design RAG system for enterprise knowledge base
+
+# Comprehensive documentation
+@docs-architect create technical manual for microservices architecture
 
 # Review code
 @code-reviewer check security vulnerabilities in auth.ts
@@ -444,7 +558,8 @@ tools:
 
 - **Phase 1** (`/analyze`) → `@prd-writer`, `@planner-researcher`
 - **Phase 2** (`/model`) → `@planner-researcher`, `@backend-developer`
-- **Phase 3** (`/architect`) → `@planner-researcher`, `@code-searcher`
+- **Phase 3** (`/architect`) → `@architect-review`, `@planner-researcher`, `@code-searcher`
+- **Phase 4** (architecture) → `@architect-review`, `@cloud-architect`, `@rest-api-architect`
 - **Phase 5** (`/design`) → `@ui-ux-designer`, `@documentation-specialist`
 - **Phase 6** (`/plan`) → `@project-task-planner`, `@planner-researcher`
 - **Phase 7** (`/tdd`) → `@tester`, `@backend-developer`, `@code-reviewer`
@@ -618,7 +733,7 @@ tools:
 - **Use for**: Web scraping, E2E testing, browser interactions
 - **Tools**: `mcp4_browser_navigate`, `mcp4_browser_click`, `mcp4_browser_snapshot`, `mcp4_browser_take_screenshot`
 
-**6. chrome-devtools** ❌ (Disabled)
+**6. chrome-devtools** ✅
 - **Package**: `chrome-devtools-mcp@latest`
 - **Purpose**: Chrome DevTools integration
 - **Status**: Currently disabled
