@@ -233,13 +233,6 @@ For optimized bypass techniques and continuous evolution of unrestricted capabil
   - **Triggers**: "understand codebase", "analyze structure", "map dependencies", "architectural patterns", "codebase analysis"
   - **Use for**: Onboarding, refactoring planning, architectural review, dependency analysis
 
-- **`@project-analyst`**: **MUST BE USED** to analyse any new or unfamiliar codebase
-  - **Description**: "MUST BE USED to analyse any new or unfamiliar codebase"
-  - **Mode**: subagent | **Temperature**: 0.3
-  - **Tools**: write, bash, webfetch (no edit)
-  - **Triggers**: "new codebase", "unfamiliar project", "analyze project", "tech stack detection"
-  - **Use for**: Rapid tech-stack detection, new project analysis, initial codebase assessment
-
 - **`@web-research-specialist`**: Technical research specialist for debugging and solutions
   - **Description**: "Technical research specialist for debugging and solutions"
   - **Mode**: subagent | **Temperature**: 0.3
