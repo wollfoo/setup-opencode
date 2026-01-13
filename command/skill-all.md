@@ -1,8 +1,3 @@
----
-description: Kích hoạt chế độ "Toàn năng" - Ép Agent rà soát và sử dụng tối đa các Skill phù hợp cho prompt của người dùng.
-intent: manual-skill-activation
----
-
 # Manual Skill Activation Command
 
 Bạn đang hoạt động trong chế độ **"MAXIMUM SKILL UTILIZATION"**.

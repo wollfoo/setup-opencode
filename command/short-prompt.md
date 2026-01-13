@@ -1,7 +1,3 @@
----
-description: Quy trình tạo lời nhắc ngắn tối ưu cho claude-opus-4-5, gpt-5.1, gpt-5.2, gemini-3-pro-preview
----
-
 # /short-prompt
 
 ## Mục tiêu

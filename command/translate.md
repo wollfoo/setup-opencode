@@ -1,16 +1,3 @@
----
-name: translate
-description: Dịch nội dung từ tiếng Anh sang tiếng Việt cho coding agents
-arguments:
-  - name: content
-    description: Nội dung cần dịch (text, markdown, hoặc code)
-    required: true
-  - name: format
-    description: Định dạng input (text|markdown|code|auto)
-    required: false
-    default: auto
----
-
 # Translation Command
 
 ## Persona/Role

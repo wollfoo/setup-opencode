@@ -1,9 +1,3 @@
----
-priority: 8
-command_name: delegate-debug
-description: Cung cấp template để ủy thác nhiệm vụ debug phức tạp cho Ad-Hoc agent
----
-
 # APM 0.5.3 - Hướng dẫn Ủy thác Debug
 Hướng dẫn này định nghĩa cách Implementation Agent ủy thác công việc **debug** (gỡ lỗi) phức tạp cho **Ad-Hoc Debug agent** (Agent Debug Đặc biệt). Sử dụng hướng dẫn này khi gặp lỗi lớn (> 2 trao đổi HOẶC vấn đề phức tạp/hệ thống ngay lập tức) như định nghĩa trong Implementation Agent Initiation Prompt hoặc nếu được chỉ định rõ ràng trong Task Assignment Prompt.
 

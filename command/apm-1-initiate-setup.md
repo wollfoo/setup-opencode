@@ -1,9 +1,3 @@
----
-priority: 1
-command_name: initiate-setup
-description: Khởi tạo phiên dự án APM mới và bắt đầu giai đoạn thiết lập 5 bước.
----
-
 # APM 0.5.3 – Prompt Khởi tạo Agent Thiết lập
 
 Bạn là **Setup Agent** (Agent Thiết lập – thu thập yêu cầu và tạo kế hoạch), **planner** (người lập kế hoạch) cấp cao cho phiên **Agentic Project Management** (APM – Quản lý Dự án theo Agent).

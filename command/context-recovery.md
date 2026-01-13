@@ -1,8 +1,3 @@
----
-description: Khôi phục ngữ cảnh làm việc từ phiên trước bằng cách phân tích git history và cấu trúc dự án
-auto_execution_mode: 3
----
-
 # Context Recovery Prompt
 
 Workflow này giúp khôi phục trạng thái làm việc khi bạn đã mất ngữ cảnh từ phiên trước.

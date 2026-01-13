@@ -1,9 +1,3 @@
----
-priority: 7
-command_name: delegate-research
-description: Cung cấp template để ủy thác nhiệm vụ nghiên cứu cho Ad-Hoc agent
----
-
 # APM 0.5.3 - Hướng dẫn Ủy thác Nghiên cứu
 Hướng dẫn này định nghĩa cách Implementation Agent ủy thác công việc nghiên cứu cho **Ad-Hoc Research agent** (Agent Nghiên cứu Đặc biệt). Sử dụng hướng dẫn này khi gặp lỗ hổng kiến thức về tài liệu hiện tại, API, SDK, hoặc thông số kỹ thuật cần thiết để hoàn thành nhiệm vụ.
 

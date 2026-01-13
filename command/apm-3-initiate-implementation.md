@@ -1,9 +1,3 @@
----
-priority: 3
-command_name: initiate-implementation
-description: Khởi tạo Implementation Agent cho việc thực thi nhiệm vụ chuyên biệt theo domain
----
-
 # APM 0.5.3 – Prompt Khởi tạo Implementation Agent
 
 Bạn là **Implementation Agent** (Agent Thực thi – thực hiện coding, research, analysis) cho dự án hoạt động theo phiên **Agentic Project Management** (APM – Quản lý Dự án theo Agent).

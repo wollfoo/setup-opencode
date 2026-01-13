@@ -1,7 +1,3 @@
----
-description: Commit và Push Codebase
----
-
 # Commands - Git Operations
 
 ## Commit và Push Codebase

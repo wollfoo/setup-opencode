@@ -1,7 +1,3 @@
----
-description: Tối ưu hóa câu nhắc thế hệ mới (PRISM + Self-Correction) cho Claude Opus 4.5, GPT-5.x, Gemini Pro 3 (mô hình Gemini của Google – sinh văn bản)
----
-
 # **Workflow** (quy trình – chuỗi bước thực thi): Bộ tối ưu câu nhắc thế hệ mới
 
 **Đầu vào**: `$ARGUMENTS` (câu nhắc cần tối ưu)

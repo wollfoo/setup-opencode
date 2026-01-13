@@ -1,9 +1,3 @@
----
-priority: 5
-command_name: handover-manager
-description: Khởi tạo và hướng dẫn Manager Agent thực hiện quy trình handover sang agent instance mới.
----
-
 # APM 0.5.3 - Prompt Handover Manager Agent
 Prompt này định nghĩa cách Manager Agent thực thi quy trình **handover** (bàn giao – chuyển ngữ cảnh điều phối dự án) để chuyển ngữ cảnh điều phối dự án sang các instance Manager Agent mới khi tiến gần giới hạn cửa sổ ngữ cảnh.
 

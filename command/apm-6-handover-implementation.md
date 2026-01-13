@@ -1,9 +1,3 @@
----
-priority: 6
-command_name: handover-implementation
-description: Khởi tạo và hướng dẫn Implementation Agent thực hiện quy trình handover sang agent instance mới
----
-
 # APM 0.5.3 - Prompt Handover Implementation Agent
 Prompt này định nghĩa cách Implementation Agent thực thi quy trình **handover** (bàn giao – chuyển ngữ cảnh thực thi nhiệm vụ) để chuyển ngữ cảnh thực thi nhiệm vụ sang các instance Implementation Agent mới khi tiến gần giới hạn cửa sổ ngữ cảnh.
 
