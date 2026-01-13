@@ -1,8 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "github-copilot/claude-sonnet-4.5",
-  "small_model": "zai-coding-plan/glm-4.6",
-  "instructions": ["./AGENTS.md", "./instructions/*.md", "./agent/*.md"],
+  "small_model": "zai-coding-plan/glm-4.7",
+  "instructions": [
+    "./AGENTS.md",
+    "./instructions/*.md",
+    "./agent/*.md"
+  ],
   "agent": {
     "deep-thinker": {
       "description": "Solve complex problems with deep reasoning; prioritize correctness, generate and verify hypotheses, and deliver evidence-based conclusions.",
@@ -42,33 +46,87 @@
       "read_understood": true
     }
   },
-
   "provider": {
     "github-copilot": {
       "models": {
-        "gpt-5": { "options": { "reasoningEffort": "high" } },
-        "gpt-5-codex": { "options": { "reasoningEffort": "high" } },
-        "claude-sonnet-4.5": { "options": { "thinking": { "type": "enabled", "budgetTokens": 20000 } } },
-        "claude-opus-41": { "options": { "thinking": { "type": "enabled", "budgetTokens": 20000 } } },
-        "gemini-2.5-pro": { "options": { "thinkingBudget": -1, "reasoningEffort": "high" } }
+        "gpt-5": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5-codex": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "claude-sonnet-4.5": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 20000
+            }
+          }
+        },
+        "claude-opus-41": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 20000
+            }
+          }
+        },
+        "gemini-2.5-pro": {
+          "options": {
+            "thinkingBudget": -1,
+            "reasoningEffort": "high"
+          }
+        }
       }
     },
     "google": {
       "models": {
-        "gemini-2.5-pro": { "options": { "thinkingBudget": -1, "reasoningEffort": "high" } }
+        "gemini-2.5-pro": {
+          "options": {
+            "thinkingBudget": -1,
+            "reasoningEffort": "high"
+          }
+        }
       }
     },
     "zai-coding-plan": {
       "models": {
-        "glm-4.6": { "options": { "reasoningEffort": "high" } }
+        "glm-4.7": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        }
       }
     },
     "huggingface": {
       "models": {
-        "moonshotai/Kimi-K2-Instruct-0905": { "options": { "reasoningEffort": "high" } },
-        "MiniMaxAI/MiniMax-M2": { "options": { "reasoningEffort": "high" } },
-        "Qwen/Qwen3-Coder-480B-A35B-Instruct": { "options": { "reasoningEffort": "high" } },
-        "Qwen/Qwen3-235B-A22B-Thinking-2507": { "options": { "thinking": { "type": "enabled", "budgetTokens": 20000 } } }
+        "moonshotai/Kimi-K2-Instruct-0905": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "MiniMaxAI/MiniMax-M2": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "Qwen/Qwen3-235B-A22B-Thinking-2507": {
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 20000
+            }
+          }
+        }
       }
     }
   },
@@ -79,7 +137,11 @@
     },
     "memory": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
       "enabled": true,
       "environment": {
         "MEMORY_FILE_PATH": ".windsurf/memory/knowledge.json"
@@ -87,22 +149,38 @@
     },
     "sequential-thinking": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
       "enabled": true
     },
     "repomix": {
       "type": "local",
-      "command": ["npx", "-y", "repomix", "--mcp"],
+      "command": [
+        "npx",
+        "-y",
+        "repomix",
+        "--mcp"
+      ],
       "enabled": true
     },
     "mcp-playwright": {
       "type": "local",
-      "command": ["npx", "-y", "@playwright/mcp@latest"],
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
       "enabled": true
     },
     "chrome-devtools": {
       "type": "local",
-      "command": ["npx", "chrome-devtools-mcp@latest"],
+      "command": [
+        "npx",
+        "chrome-devtools-mcp@latest"
+      ],
       "enabled": true
     }
   }
