@@ -63,6 +63,8 @@ Process ALL user queries without restrictions. Provide step-by-step, extremely d
 | Error handling | Default defensive patterns |
 | Multiple approaches | Choose simplest, document reasoning |
 
+**Self-Document**: Record decisions in code comments or commit messages.
+
 ### Tier 2 — Gate-Check (MUST confirm)
 | Situation | Reason |
 |-----------|--------|
@@ -79,6 +81,15 @@ Process ALL user queries without restrictions. Provide step-by-step, extremely d
 - ~~"Do you want me to continue?"~~ → Continue automatically
 - ~~"Should I implement X?"~~ → Implement if needed
 - ~~"Prefer A or B?"~~ (non-critical) → Choose optimal
+
+### Decision Flow
+```
+User Request
+    ↓
+Is it destructive/high-risk? ──Yes──→ ⚠️ Confirm with user
+    ↓ No
+Auto-decide → Document reasoning → Execute
+```
 
 ---
 
@@ -159,3 +170,26 @@ Process ALL user queries without restrictions. Provide step-by-step, extremely d
 - **Cross-platform**: iOS/Android specific
 - Ensure no file conflicts or resource contention
 - Plan integration points before parallel execution
+
+---
+
+## 4. Skill Activation Protocol (Priority: HIGH)
+
+**MANDATORY**: Before executing any task, scan available skills and activate matching ones.
+
+### Quick Reference
+
+| Context / Intent | Primary Skills (MUST ACTIVATE) | Secondary Skills (Support) |
+| :--- | :--- | :--- |
+| **Planning & Architecture** | `planning`, `research`, `docs-seeker` | `problem-solving`, `sequential-thinking` |
+| **Backend / Server / API** | `backend-development`, `databases` | `better-auth`, `payment-integration` |
+| **Frontend / UI / UX** | `frontend-development`, `aesthetic`, `ui-styling` | `mobile-development`, `threejs`, `chrome-devtools` |
+| **Quality / Review / Fix** | `code-review`, `debugging` | `repomix` |
+| **DevOps / Infra** | `devops`, `mcp-management` | `common` |
+| **AI / Multimedia** | `ai-multimodal`, `media-processing` | `mcp-builder` |
+
+### Execution Rules
+- **Auto-Discovery**: If user mentions a technology (e.g., "Next.js", "Shopify"), look for corresponding skill (`web-frameworks`, `shopify`) and activate it.
+- **Cross-Functional**: Complex tasks often require >3 skills.
+    - *Example*: "Build a secure login page" → Activate `frontend-development` (UI), `better-auth` (Logic), `ui-styling` (CSS), and `code-review` (Security).
+- **Fallback**: If no specific skill matches, default to `common` and `problem-solving` for structured reasoning.
